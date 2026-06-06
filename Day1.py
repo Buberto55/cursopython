@@ -62,7 +62,7 @@ print(len(input("What is your name? ")))
 username = input("What is your name? ")
 length = len(username)
 print(length)
-
+#--------------------------------------------------------------------------------------
 # Exercise 3: Variable
 glass1 = "milk"
 glass2 = "juice"
@@ -70,7 +70,7 @@ temp = glass1
 glass1 = glass2
 glass2 = temp
 print(glass1, glass2)
-
+#--------------------------------------------------------------------------------------
 # Project: Band Name Generator
 print("Welcome to the Band Name Generator.")
 city = input("What's the name of the city you grew up in? ")
