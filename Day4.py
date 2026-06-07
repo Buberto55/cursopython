@@ -52,4 +52,31 @@ print(salones)
 print(salones[1][1])
 
 # Project: Rock, Papper, Scissors
-opc = input(int("Hora de jugar! Selecciona: \n1 ► Piedra\n2 ► Papel\n3 ► Tijeras"))
+player = int(input("Hora de jugar! Selecciona: \n1 ► Piedra\n2 ► Papel\n3 ► Tijera\n Jugador: "))
+cpu = random.randint(1,3)
+jugada = {1:"Piedra", 2:"Papel", 3:"Tijera"}
+
+if player < 1 or player > 3:
+    print("que del 1 al 3 saaaaaaaaaaaaaaaabe")
+else:
+    print(f"Jugador: {jugada[player]} VS CPU: {jugada[cpu]}")
+    if (player == 1 and cpu == 3) or (player == 2 and cpu == 1) or (player == 3 and cpu == 2):
+        print("Ganaste!")
+    elif player == cpu:
+        print("Empate")
+    else:
+        print("Perdiste :c")
+
+# Now there is an easyer way to solve this problem:
+resultado = (player - cpu) % 3
+
+if resultado == 0:
+    print("Empate")
+elif resultado == 1:
+    print("Ganaste")
+else:
+    print("Perdiste")
+
+# This is because we are considering the properties of the values of rock, paper, scissors as 1, 2, 3
+# And is more complicated just because how python solve the module ecuation that give the module results
+
