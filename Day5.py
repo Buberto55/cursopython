@@ -88,5 +88,5 @@ while num_let or num_sim or num_num:
         num_num -= 1
 print(pw)
 
-# F*CK this class jajajajaja I made it by this way knoing that the function shuffle exist jajaja
+# F*CK this class jajajajaja I did it this way even though I knew the shuffle() function existed
 # I hate it but, I did it!
