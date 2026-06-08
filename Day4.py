@@ -37,7 +37,7 @@ for fruta in list_fruits:
     print(fruta)
 
 #------------------------------------------------------------
-# Let's print a random name who will pay the bill
+# Exercise 5: Who will pay the bill?
 friends = ["Pablo", "Miguel", "Juan", "Lilia", "Carlos"]
 print(random.choice(friends))
 # Using random.randint

@@ -85,19 +85,27 @@ def dencryp(msng,shift):
 #print(dencry)
 
 def caesar(dir, txt, shf):
-    if dir == "decode":
-        shf *= -1
-    encry(msng=txt,shift=shf)
+        encry = ""
+        if dir == "decode":
+            shf *= -1
+        for letter in txt:
+            en_da = abcd.index(letter) + shf
+            en_da %= len(abcd)
+            encry += abcd[en_da]
+        print(encry)
 
-        
+stay = True
+while stay:
 
-opc = input("Escribe la funcion: 'encode' o 'decode':").lower
-texto = input("Escribe el mensaje:").lower
-brinco = int(input("Escribe el desfase:"))
+    opc = input("Escribe la funcion: 'encode' o 'decode':").lower()
+    texto = input("Escribe el mensaje:").lower()
+    brinco = int(input("Escribe el desfase:"))
 
-caesar(dir=opc, txt=texto, shf=brinco)
+    caesar(dir=opc, txt=texto, shf=brinco)
 
-
-
-
-
+    reset = input("Deseas continuar? Escribe: Si o No: ").lower()
+    if reset == "no":
+        stay = False
+    elif reset == "si":
+        print("Volvamos a empezar!!!!")
+    
