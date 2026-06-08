@@ -46,29 +46,57 @@ calculate_love_score("Tru", "Lov")
 
 # Project: Caesar Cipher
 abcd = list(string.ascii_lowercase)
-encry = []
-jumps = []
-mesaje = []
+encry = ""
+dencry = ""
 
-def encryp(msng, shift):
-    for letter in msng:
-        jumps.append(abcd.index(letter))
-        if abcd.index(letter) + shift > 25:
-            encry.append(abcd.index(letter) + shift - 26)
-        else:
-            encry.append(abcd.index(letter) + shift)
+#def encryp(msng, shift):
+#    for letter in msng:
+#        jumps.append(abcd.index(letter))
+#        if abcd.index(letter) + shift > 25:
+#            encry.append(abcd.index(letter) + shift - 26)
+#        else:
+#            encry.append(abcd.index(letter) + shift)
 #print(jumps)
 #print(encry)
-    for letter in range(0,len(msng)):
-        mesaje.append(abcd[encry[letter]])
-    print("".join(mesaje))
+#    for letter in range(0,len(msng)):
+#        mesaje.append(abcd[encry[letter]])
+#    print("".join(mesaje))
 
+def encryp(msng,shift):
+    encry = ""
+    for letter in msng:
+        en_da = abcd.index(letter) + shift
+        en_da %= len(abcd)
+        encry += abcd[en_da]
+    print(encry) 
 
-encryp(msng=input("Escribe el mensaje: ").lower(), shift=int(input("Escribe el desfase del mensaje: ")))
-#print(len(abcd))
-#print(abcd)
-#msng = input("Escribe el mensaje: ").lower()
-#shift = int(input("Escribe el desfase del mensaje: "))
+#encry = encryp(msng=input("Escribe el mensaje: ").lower(), shift=int(input("Escribe el desfase del mensaje: ")))
+#print(encry)
+
+def dencryp(msng,shift):
+    dencry = ""
+    for letter in msng:
+        den_da = abcd.index(letter) - shift
+        den_da %= len(abcd)
+        dencry += abcd[den_da]
+    print(dencry) 
+
+#dencry = dencryp(msng=input("Escribe el mensaje: ").lower(), shift=int(input("Escribe el desfase del mensaje: ")))
+#print(dencry)
+
+def caesar(dir, txt, shf):
+    if dir == "decode":
+        shf *= -1
+    encry(msng=txt,shift=shf)
+
+        
+
+opc = input("Escribe la funcion: 'encode' o 'decode':").lower
+texto = input("Escribe el mensaje:").lower
+brinco = int(input("Escribe el desfase:"))
+
+caesar(dir=opc, txt=texto, shf=brinco)
+
 
 
 
